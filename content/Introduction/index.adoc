@@ -1,0 +1,28 @@
+= Color Shapes Engine - Documentation
+
+////
+weight=1000
+////
+
+////
++++
+title = "About"
+date = "2023-05-09"
+menu = "main"
++++
+////
+
+
+*Color Shapes* is a board game. Its rules are based on game *Color linez*.
+
+It has an engine and several user interfaces like:
+
+ * *Color Shapes Engine* is a library written in Java programming language, which contains the rules of "Color Shapes". It has no graphical interface. 
+ * *Color Shapes Desktop* is a desktop game. It uses *Color Shapes Engine* and provides graphical user interface.
+
+Collect points and beat your friends. It is probably harder than you thought.
+
+WARNING: You will probably spend a lot of hours of fun with this game and never forget. It will probably steal a lot of your free time at school or office or at home. It is simple to begin playing it but it is hard to stop. You maybe play this game almost every day.
+
+This single-player game is a simple mind-bending funny wonderful cool relaxing time wasting challenging, but very interesting addictive entertaining colorful, logic strategy matching board puzzle turn-based game, which improves logical reasoning ability, and concentration. It is a great idea.
+

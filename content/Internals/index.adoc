@@ -1,0 +1,83 @@
+= Color Shapes Engine - Documentation
+
+////
+weight=800
+////
+
+////
++++
+title = "About"
+date = "2023-05-09"
+menu = "main"
++++
+////
+
+== Ball factory
+
+== Ball thrower
+
+Some clones shows also the positions of the next balls. This is a hint.
+
+|===
+| Name | Description | Min | Max | Default
+
+| Start ball count | One of the 16 | 1 | ? | 5
+| Next ball count | Multiplies the standard earned points. | 1 | ? | 3
+|===
+
+== Shape finder
+
+=== Bomb exploding alghoritm
+
+|===
+|  |  |  |  |  |  | x  |  |  |  | 
+|  |  | -4 | -3 | -2 | -1 | 0 | 1 | 2 | 4 | 4
+|  | 4 | 56 | 77 | 61 | 65 | 49 | 69 | 57 | 53 | 53
+|  | 3 | 76 | 32 | 45 | 37 | 25 | 33 | 41 | 79 | 79
+|  | 2 | 60 | 44 | 16 | 21 | 9 | 17 | 13 | 63 | 63
+|  | 1 | 72 | 36 | 24 | 8 | 1 | 5 | 19 | 67 | 67
+| y  | 0 | 52 | 28 | 12 | 4 | *0* | 3 | 11 | 51 | 51
+|  | -1 | 68 | 40 | 20 | 6 | 2 | 7 | 23 | 71 | 71
+|  | -2 | 64 | 48 | 14 | 18 | 10 | 22 | 15 | 59 | 59
+|  | -3 | 80 | 30 | 42 | 34 | 26 | 38 | 46 | 75 | 75
+|  | -4 | 54 | 74 | 58 | 70 | 50 | 66 | 62 | 55 | 55
+|===
+
+==== Method 1
+
+----
+result = {width of board} + {height of board} / 2
+if result < 5
+  do
+    result = 5
+  enddo
+return result
+----
+
+==== Method 2 
+
+----
+range = ( sqrt ( sqrt ( {width of board} * {height of board} ) ) ) /3
+if range < 1
+  do
+    result = floor(range * 8)
+  enddo
+elseif range < 2
+do
+  result = 8 + floor(range * 16)
+enddo
+
+elseif range < 3
+  do
+    result = 8 + 16 + floor(range * 24)
+  enddo
+
+elseif range < 4
+  do
+    result = 8 + 16 + 24 + floor(range * 32)
+  enddo
+else result = 80
+return result
+----
+
+== Path finder

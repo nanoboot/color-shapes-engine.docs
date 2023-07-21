@@ -1,0 +1,165 @@
+= Color Shapes Engine - Documentation
+
+////
+weight=600
+////
+
+////
++++
+title = "About"
+date = "2023-05-09"
+menu = "main"
++++
+////
+
+== Main goal of the game
+
+The mail goal of the game is to arrange balls of the same color in shapes like lines, squares, rings. Once such a shape is formed, the balls are removed and player earns new points. This arrangement is done by re-allocation of the balls.
+
+== Other goals of the game
+
+There is basically no end of the game, but your first objective is to surpass the 100 points scored by the “king”. Once you surpass him, he loses the throne and you become the new king, but the game continues ad infinitum. You lose when the entire board is filled with balls.
+
+Goal of the game is to reach more points than the "king"; The king is a figure on a column to the left of the playing field indicating either the maximum number reached so far or the starting point number 100. If the "challenger" reaches more points than the king, he kills it and becomes the king himself in the next round.
+
+Pay attention to the little men standing at the edges of the field. This is the original idea of ​​the developers to show the current number of points and a record. On the column to the left is the "king" - the character corresponding to the player who set the highest record. The player's current result is displayed on the right, in the form of a purple knight. The more points the player will score. The higher will be his column. Of course, the amount of prize points was also displayed in the form of numbers (at the top of the screen). But here such an original indicator in the form of columns was very clear. And besides, he spurred the desire to reach and exceed the previous record.
+
+There is a disadvantage: there is no time limit and no points limit. So you don't know what goal you have to reach. You can just play and play infinitely. You will never have a complete satisfaction.
+
+This game has two objectives: achieve as highest score as it is possible and remove as much balls as it is possible.
+
+The more lines of the balls of the same color you arrange, the longer the game will go on. The longer you play, the higher your score is.
+
+Game cannot be won, player always plays against the highest score exclusively.
+
+== Start of the game
+
+When you launch the game, you will see all the game parts like board, preview bar, cells for example.
+
+The board is empty first.
+
+Five random balls are placed in random empty cells of the board (by the ball thrower).
+
+Preview bar is filled.
+
+Now you can start to play. You have to choose one of these 5 balls and move it to an empty cell (See Game chapter).
+
+
+== Game 
+
+Game consists of steps and events.
+
+An event is an activation of a cell and is defined by the row and column of the cell.
+
+Events can produce ball moves.
+
+You can activate a cell with a left-click and releasing the mouse button.
+
+To move a ball to a new destination cell it is required to activate the cell, where the ball is now. The ball is now activated and starts bouncing up and down. Then you have to activate the destination empty tile.
+
+If there is an unblocked path between the start and the destination, the ball is moved, otherwise nothing happens.
+
+Usually, the ball will take the shortest path to it’s destination cell.
+
+Sound effect can be provided, if there was a try to move ball using a not allowed path.
+
+*Note:*
+
+_You can move any ball to any cell which can be reached by moving the ball on a connected path horizontally or vertically or both (but not diagonal), otherwise you will not be able to move it at all, because you cannot jump over balls. A clear path must be available._
+
+*Possible move example*
+
+_Note: only horizontal and vertical moves are present._
+
+
+image::Possible_move_example.png[Possible move example]
+
+*Impossible move example*
+
+_Note: diagonal move is present and caused the failure to move the ball._
+
+image::Impossible_move_example.png[Impossible move example]
+
+Every time you move a ball, you finished a new step.
+
+Only one ball can be moved while one step.
+
+Every time, a new step is finished or a new file is placed on the board, it is checked, if a new shape was arranged (by shape finder).
+
+If such a shape was arranged, these balls shows an explosion effect and are removed from the main board, disappear immediately, player gets more space to move balls around and player earns new score points based on the ball count, otherwise three new balls of random color are added to the random free tiles of the main board. The next balls are shown in the next board.
+
+=== Shapes
+
+Some clones provides option to arrange other shapes than lines like squares, blocks.
+
+==== Line
+
+Vertical, horizontal or diagonal line of five or more balls of the same color
+
+image::Shape_line.png[Shape line]
+
+==== Square
+
+image::Shape_square.png[Shape square]
+
+==== Ring
+
+image::Shape_ring.png[Shape ring]
+
+==== Other
+
+==== Custom
+
+== Scoring
+
+Scoring depends on number of the balls, that must be aligned, so if the line is longer than 5 balls (6, 7… in standard game), you get a bonus for exceeding balls, but it is risky, as you might not be able to complete the row if a new ball appears in an unsuitable place. Square and ring shapes are scored by 10 points.
+
+*Score table for line shape:*
+
+|===
+| Line length | Points
+
+| 5 | 10
+| 6 | 12
+| 7 | 18
+| 8 | 28
+| 9 | 42
+|===
+
+== End of the game
+
+The game is over at the moment, when the entire board is filled with balls and there is no empty cell (without grid). The end is because no ball can be moved at this point.
+
+At the start, it is possible to move almost any ball to any empty place. But after some time the board is more and more full and it gets one time nearly impossible to make any useful move and the board is full and the game is over.
+
+== Strategy tips
+
+The challenge is to arrange as much lines as possible to achieve the highest score before the board is completely filled with balls. That means, you want to arrange as much shapes as it is possible.
+
+You want to keep the game board as free as it is possible and play as long as possible. That means, you want to minimize the fullness of the board and maximize the count of steps (ball moves).
+
+_As more and more balls are added to the board, the game gets more difficult. It pays to be very efficient with your moves._
+
+If you constantly move balls without completing the lines, the board fills very quickly. That means you want to minimize moves, which does not produce arrangement of a shape.
+
+
+To score even more points try to create an intersection of two lines of the same color.
+
+_On the other hand, trying to build an intersection is very dangerous. You will run out of free space fast._
+
+== Game control
+
+Game can be controlled based on the clone by mouse, keyboard or touchscreen.
+
+=== Mouse
+
+=== Keyboard
+
+Some clones provides the control of the tiles by keyboard: Select the cell using the arrow keys and press the space key to activate the ball or empty tile.
+
+
+==== Recommended keyboard shortcuts:
+
+=== Touchscreen
+
+=== Gamepad

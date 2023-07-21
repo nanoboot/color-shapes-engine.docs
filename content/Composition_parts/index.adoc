@@ -1,11 +1,13 @@
 = Color Shapes Engine - Documentation
 
 ////
+weight=700
+////
+
+////
 +++
 title = "About"
 date = "2023-05-09"
 menu = "main"
 +++
 ////
-
-This site provides documentation for "Color Shapes Engine" application.
