@@ -114,17 +114,27 @@ image::Shape_ring.png[Shape ring]
 
 Scoring depends on number of the balls, that must be aligned, so if the line is longer than 5 balls (6, 7… in standard game), you get a bonus for exceeding balls, but it is risky, as you might not be able to complete the row if a new ball appears in an unsuitable place. Square and ring shapes are scored by 10 points.
 
+Default minimum length is 5:
+
 *Score table for line shape:*
 
 |===
-| Line length | Points
+| Balls over the minimum | Line length for min=5 | Points
 
-| 5 | 10
-| 6 | 12
-| 7 | 18
-| 8 | 28
-| 9 | 42
+| 0 | 5 | 10
+| 1 | 6 | 12
+| 2 | 7 | 18
+| 3 | 8 | 28
+| 4 | 9 | 42
+| higher than 4 | n/a | (42 + ((ballsOverMinimum - 4) * 5))
 |===
+
+The calculated count of points is multiplied by values for each Ball
+
+Example: Shape=line Min lenght=5 Balls:green with values 1,2,-1,-1,-1
+
+ * The calculated point count is = 10 * 1 * 2 * (-1) * (-1) * (-1) = -20 
+ ** This point count is negative - yes, you can earn point, which decrease your score, so be, please, careful, when building ball groups.
 
 == End of the game
 

@@ -25,6 +25,7 @@ Attributes:
 . Height: Type=Number Min=3 Max=32 Default=9.
 . List of cells: Type=List Min=9 Max=1024 Default=81
    * Count of list of cells depends on width and height (= width * height).
+. Activated cell: Type=Cell Min=n/a Max=n/a Default=nothing
 . List of holes: Type=List Min=0 Max={board.width * board.height} / 2. Default=0
 
 == Cell
@@ -34,6 +35,8 @@ Cell is a place, where balls can be inserted.
 Attributes: 
 
 . Ball: Type=Ball or nothing Default=nothing
+. Row: Type=Number Min=1 Max=board.height Default=n/a
+. Column: Type=Number Min=1 Max=board.width Default=n/a
 . Top wall: Type=yes or no Default=no
 . Right wall: Type=yes or no Default=no
 . Bottom wall: Type=yes or no Default value=no
@@ -52,22 +55,12 @@ Attributes:
 == Ball
 Attributes:
 
-. Ball type: Type: Ball type
-. Colour: Type Colour
-. Value
-. Movable
-. Breakable
-. Exploded
-
-
-|===
-|Name | Description | Type | Min | Max | Default value
-
-| Value | Multiplies the standard earned points | number | -2 | 2 | 1
-| Movable | Ball can be moved (boolean) | yes or no | n/a | n/a | yes
-| Breakable | Ball can explode (boolean) | yes or no | n/a | n/a | yes
-| Exploded | Only for bomb ball types | yes or no | n/a | n/a | no
-|===
+. Ball type: Type=Ball type
+. Colour: Type=Colour
+. Value: Type=number Min=-2 Max=2 Default=1 ... Multiplies the standard earned points
+. Movable: Type yes or no Min=n/a Max=n/a Default=yes ... Ball can be moved
+. Breakable: Type yes or no Min=n/a Max=n/a Default=yes ... Ball can explode
+. Exploded: Type yes or no Min=n/a Max=n/a Default=no ... Only for bomb ball types
 
 _Note: Shape cannot be arranged only from joker balls. Rainbow balls have colour 0, value 1, movable true and breakable true._
 
@@ -161,3 +154,5 @@ Player score shows the current sum of earned points and is updated during the ga
 == Record player score
 
 Record player score shows the sum of earned points of the record player and is not changed during the game, because the record is changed only in case, a new game is finished with a record point count.
+
+== Total score
